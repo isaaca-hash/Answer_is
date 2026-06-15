@@ -1,0 +1,27 @@
+{
+  "explosives": [
+    {
+      "id": "grenade",
+      "name": "Grenade",
+      "damage": 150,
+      "radius": 7.0,
+      "throw_min_range": 5,
+      "throw_max_range": 15,
+      "fuse_time": 0.5,
+      "max_carry": 3,
+      "price": 30,
+      "falloff": "linear"
+    },
+    {
+      "id": "molotov",
+      "name": "Molotov",
+      "instant_damage": 40,
+      "dot_damage": 60,
+      "duration": 5.0,
+      "radius": 5.0,
+      "max_carry": 2,
+      "price": 40,
+      "behavior": "ground_fire_pool"
+    }
+  ]
+}

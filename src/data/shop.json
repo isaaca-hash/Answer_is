@@ -1,0 +1,47 @@
+{
+  "currency": "Zombie Meat",
+  "earn_sources": [
+    { "type": "zombie_kill", "amount": "per zombie drop value" },
+    { "type": "wave_clear_bonus", "amount_per_wave": 5 }
+  ],
+  "armor": [
+    { "id": "light",  "damage_reduction": 0.15, "durability": 50,  "price": 30, "speed_penalty": 0.00 },
+    { "id": "medium", "damage_reduction": 0.35, "durability": 75,  "price": 50, "speed_penalty": 0.05 },
+    { "id": "heavy",  "damage_reduction": 0.50, "durability": 150, "price": 80, "speed_penalty": 0.10 }
+  ],
+  "armor_repair_cost_fraction": 0.5,
+  "consumables": {
+    "sage_orb": {
+      "name": "Sage Orb (세이지의 구슬)",
+      "effect": "restore_hp",
+      "hp_amount": 75,
+      "price": 50
+    },
+    "revive_ticket": {
+      "name": "Revive Ticket (부활권)",
+      "effect": "revive",
+      "price_progression": [50, 100, 200, 400, 800, 1600]
+    }
+  },
+  "weapon_upgrades": {
+    "pistol":  { "damage_pct": 0.20, "prices": [10, 20, 30],  "mag_bonus": 5  },
+    "rifle":   { "damage_pct": 0.10, "prices": [30, 70, 120], "mag_bonus": 10 },
+    "shotgun": { "damage_pct": 0.20, "prices": [20, 50, 80],  "mag_bonus": 5  },
+    "sniper":  { "damage_pct": 0.30, "prices": [40, 100, 150],"mag_bonus": 5  }
+  },
+  "other_upgrades": {
+    "recoil_reduction_pct_per_level": 0.10,
+    "reload_speed_reduction_pct_per_level": 0.20
+  },
+  "explosive_upgrades": [
+    { "id": "grenade_damage", "effect": "+50% damage",   "price": 30, "target": "grenade" },
+    { "id": "grenade_radius", "effect": "+50% radius",   "price": 30, "target": "grenade" },
+    { "id": "molotov_duration", "effect": "+3s duration","price": 35, "target": "molotov" },
+    { "id": "molotov_area",   "effect": "+50% area",     "price": 50, "target": "molotov" }
+  ],
+  "map_unlocks": [
+    { "id": "saloon",    "cost": 100, "benefit": "Extra cover, 2nd floor vantage point" },
+    { "id": "graveyard", "cost": 200, "benefit": "Blocks boss direct line of approach" },
+    { "id": "mine",      "cost": 350, "benefit": "High-value zombie spawn zone" }
+  ]
+}

@@ -1,0 +1,109 @@
+{
+  "zombies": [
+    {
+      "id": "normal",
+      "name": "Normal Zombie",
+      "hp": 100,
+      "speed": 3,
+      "damage": 7,
+      "attack_type": "melee",
+      "attack_range": 1.5,
+      "attack_cooldown": 1.0,
+      "drop_currency": 5,
+      "spawn_wave": 1,
+      "weight": 70
+    },
+    {
+      "id": "dasher",
+      "name": "Dasher (다 받을거야)",
+      "hp": 150,
+      "speed": 5,
+      "damage": 15,
+      "attack_type": "melee_charge",
+      "attack_range": 1.5,
+      "attack_cooldown": 1.5,
+      "charge": {
+        "damage": 20,
+        "stun_duration": 1.0,
+        "charge_speed": 12,
+        "charge_cooldown": 5.0,
+        "telegraph_time": 0.5
+      },
+      "drop_currency": 15,
+      "spawn_wave": 10,
+      "weight": 15
+    },
+    {
+      "id": "boomer",
+      "name": "Boomer (팡팡)",
+      "hp": 50,
+      "speed": 12,
+      "damage": 0,
+      "attack_type": "suicide_explosion",
+      "attack_range": 1.5,
+      "attack_cooldown": 0,
+      "explosion": {
+        "trigger_range": 1.5,
+        "damage": 50,
+        "radius": 3.0
+      },
+      "drop_currency": 10,
+      "spawn_wave": 20,
+      "max_concurrent": 2,
+      "weight": 8
+    },
+    {
+      "id": "gunner",
+      "name": "Gunner (짬찼다고)",
+      "hp": 200,
+      "speed": 2,
+      "damage": 15,
+      "attack_type": "ranged",
+      "attack_range": 20,
+      "attack_cooldown": 0.5,
+      "ranged": {
+        "fire_rate": 2,
+        "burst_count": 4,
+        "burst_cooldown": 1.0,
+        "projectile_speed": 30,
+        "accuracy": 0.7
+      },
+      "summon_ability": {
+        "trigger_hp_threshold": 0.1,
+        "summon_id": "normal",
+        "summon_count": 4
+      },
+      "drop_currency": 30,
+      "spawn_wave": 15,
+      "weight": 7
+    },
+    {
+      "id": "boss_4star",
+      "name": "4-Star (4스타)",
+      "hp": 700,
+      "speed": 2,
+      "damage": 40,
+      "attack_type": "melee_heavy",
+      "attack_range": 2.0,
+      "attack_cooldown": 1.5,
+      "weak_point": {
+        "part": "head",
+        "damage_multiplier": 2.0
+      },
+      "phase_2": {
+        "trigger_hp": 250,
+        "summon_interval": 20.0,
+        "summon_pool": ["dasher", "boomer", "gunner"],
+        "summon_count_each": 1
+      },
+      "drop_currency": 70,
+      "spawn_wave": 10,
+      "weight": 0,
+      "is_boss": true
+    }
+  ],
+  "scaling": {
+    "health_increase_per_wave": 0.07,
+    "damage_increase_per_wave": 0.05
+  }
+}

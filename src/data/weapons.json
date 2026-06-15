@@ -1,0 +1,83 @@
+{
+  "weapons": [
+    {
+      "id": "pistol",
+      "name": "Pistol",
+      "starter": true,
+      "price": 0,
+      "damage": 15,
+      "rpm": 180,
+      "recoil": "low",
+      "recoil_value": 0.5,
+      "mag_size": 14,
+      "max_mags": 5,
+      "starting_mags": 3,
+      "reload_time": 3.0,
+      "fire_mode": "semi",
+      "headshot_multiplier": 1.5,
+      "effective_range": 30
+    },
+    {
+      "id": "rifle",
+      "name": "Rifle",
+      "starter": false,
+      "price": 75,
+      "damage": 20,
+      "rpm": 240,
+      "recoil": "medium",
+      "recoil_value": 1.0,
+      "mag_size": 20,
+      "max_mags": 6,
+      "starting_mags": 0,
+      "reload_time": 4.0,
+      "fire_mode": "auto",
+      "headshot_multiplier": 1.5,
+      "effective_range": 50
+    },
+    {
+      "id": "shotgun",
+      "name": "Shotgun",
+      "starter": false,
+      "price": 40,
+      "damage": 5,
+      "pellets": 26,
+      "rpm": 60,
+      "recoil": "high",
+      "recoil_value": 2.5,
+      "mag_size": 5,
+      "max_mags": 7,
+      "starting_mags": 0,
+      "reload_time": 0.6,
+      "reload_type": "per_shell",
+      "fire_mode": "pump",
+      "headshot_multiplier": 1.5,
+      "effective_range": 15,
+      "damage_falloff_start": 8,
+      "damage_falloff_end": 15
+    },
+    {
+      "id": "sniper",
+      "name": "Sniper",
+      "starter": false,
+      "price": 100,
+      "damage": 140,
+      "rpm": 60,
+      "recoil": "high",
+      "recoil_value": 3.0,
+      "mag_size": 5,
+      "max_mags": 4,
+      "starting_mags": 0,
+      "reload_time": 4.5,
+      "fire_mode": "bolt",
+      "headshot_multiplier": 2.5,
+      "scope_zoom": 3.5,
+      "penetration": 3,
+      "effective_range": 100
+    }
+  ],
+  "common_rules": {
+    "weapon_slots": 2,
+    "weapon_switch_time": 1.5,
+    "starter_weapon": "pistol"
+  }
+}
