@@ -11,6 +11,7 @@ export default defineConfig({
   build: {
     target: 'es2020',
     chunkSizeWarningLimit: 1500,
+    reportCompressedSize: false,
     rollupOptions: {
       output: {
         manualChunks: {
@@ -19,6 +20,9 @@ export default defineConfig({
           'vendor-zustand': ['zustand'],
           'vendor-howler': ['howler'],
         },
+        chunkFileNames: 'assets/[name]-[hash].js',
+        entryFileNames: 'assets/[name]-[hash].js',
+        assetFileNames: 'assets/[name]-[hash][extname]',
       },
     },
   },

@@ -1,8 +1,8 @@
 import * as THREE from 'three'
 import type { InputManager } from '../../core/InputManager'
+import { useGameStore } from '../../ui/store'
 
 const PITCH_LIMIT = Math.PI / 2 - 0.01 // ~89.4° — prevent gimbal lock
-const SENSITIVITY_DEFAULT = 0.002
 
 // Wraps PerspectiveCamera + PointerLock API.
 // Yaw rotates the Object3D (parent), pitch rotates the camera directly.
@@ -13,7 +13,6 @@ export class FPSCamera {
 
   private yaw = 0
   private pitch = 0
-  sensitivity = SENSITIVITY_DEFAULT
   private locked = false
 
   constructor(canvas: HTMLCanvasElement) {
@@ -37,8 +36,9 @@ export class FPSCamera {
   update(input: InputManager, _dt: number): void {
     if (!this.locked) return
 
-    this.yaw   -= input.mouseDeltaX * this.sensitivity
-    this.pitch -= input.mouseDeltaY * this.sensitivity
+    const sensitivity = useGameStore.getState().sensitivity
+    this.yaw   -= input.mouseDeltaX * sensitivity
+    this.pitch -= input.mouseDeltaY * sensitivity
     this.pitch  = Math.max(-PITCH_LIMIT, Math.min(PITCH_LIMIT, this.pitch))
 
     this.object.rotation.y = this.yaw

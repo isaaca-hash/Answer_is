@@ -1,5 +1,6 @@
 import { create } from 'zustand'
 import type { GamePhase } from '../types/game.types'
+import { getSensitivity, getVolume } from '../utils/storage'
 
 // Per-weapon upgrade levels (0–3 each)
 export interface WeaponUpgrades {
@@ -115,6 +116,12 @@ interface GameStore {
   // Tab stats overlay toggle
   showStats: boolean
   setShowStats: (v: boolean) => void
+
+  // Persistent options
+  sensitivity: number
+  setSensitivity: (v: number) => void
+  volume: number
+  setVolume: (v: number) => void
 }
 
 export const useGameStore = create<GameStore>((set, get) => ({
@@ -219,4 +226,9 @@ export const useGameStore = create<GameStore>((set, get) => ({
 
   showStats: false,
   setShowStats: (v) => set({ showStats: v }),
+
+  sensitivity: getSensitivity(),
+  setSensitivity: (v) => set({ sensitivity: v }),
+  volume: getVolume(),
+  setVolume: (v) => set({ volume: v }),
 }))
